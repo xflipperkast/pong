@@ -1,4 +1,4 @@
-# pong
+# pong in html/css/js
 Simple pong game
 
 
