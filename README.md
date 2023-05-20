@@ -3,6 +3,7 @@ Simple pong game
 
 ## KeyBinds
 | Key | Action |
+| ------ | ------ |
 | Enter | Start Game |
 | Paddle 1 | Keys |
 | W | Up |
