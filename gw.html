@@ -2,41 +2,69 @@
 <html>
 <head>
   <title>Sweepstakes Giveaway</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+    * {
       margin: 0;
       padding: 0;
-      background-color: #f2f2f2;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
     .container {
-      width: 80%;
-      margin: 0 auto;
+      width: 100%;
+      max-width: 600px;
       background-color: #fff;
       padding: 20px;
+      border-radius: 10px;
       box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
     }
+
     .header {
       text-align: center;
-      padding: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid #f2f2f2;
     }
+
     .header img {
-      max-width: 200px;
+      width: 100%;
       height: auto;
+      max-width: 300px;
+      margin-bottom: 20px;
     }
+
     .header h1 {
       color: #333;
+      margin-bottom: 10px;
     }
+
     .content {
       text-align: center;
     }
+
     .content h2 {
       color: #333;
+      margin: 20px 0;
     }
+
     .content p {
       color: #666;
+      margin-bottom: 20px;
     }
+
     .btn {
+      display: block;
       margin: 10px auto;
       padding: 10px;
       background-color: #4CAF50;
@@ -44,24 +72,37 @@
       border: none;
       cursor: pointer;
       font-size: 18px;
-      width: 60%;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      text-align: center;
     }
+
+    .btn i {
+      margin-right: 5px;
+    }
+
     .btn[disabled] {
       background-color: #888;
+      cursor: not-allowed;
     }
+
     #discordInput {
-      margin: 10px 0;
+      display: block;
+      margin: 10px auto;
       padding: 10px;
       border: 1px solid #ccc;
-      width: 60%;
+      width: 100%;
       border-radius: 5px;
     }
+
+    #timer {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
   </style>
 </head>
-<script>
-(function(_0x465856,_0x441589){var _0x118f59=_0x4c35,_0x47341f=_0x465856();while(!![]){try{var _0x668da9=-parseInt(_0x118f59(0x1a4))/0x1*(parseInt(_0x118f59(0x1b5))/0x2)+parseInt(_0x118f59(0x1b2))/0x3+parseInt(_0x118f59(0x1aa))/0x4*(parseInt(_0x118f59(0x1bc))/0x5)+parseInt(_0x118f59(0x1b7))/0x6*(-parseInt(_0x118f59(0x1be))/0x7)+parseInt(_0x118f59(0x195))/0x8+parseInt(_0x118f59(0x199))/0x9+-parseInt(_0x118f59(0x1b0))/0xa;if(_0x668da9===_0x441589)break;else _0x47341f['push'](_0x47341f['shift']());}catch(_0xe3d3e7){_0x47341f['push'](_0x47341f['shift']());}}}(_0x11d1,0xb961f));function clickButton(_0xb23aaa){var _0x10a00f=_0x4c35,_0x5daf21=document[_0x10a00f(0x1ba)](_0xb23aaa);_0x5daf21[_0x10a00f(0x1ac)]=!![],_0x5daf21[_0x10a00f(0x1a5)]=_0x10a00f(0x194),setTimeout(function(){var _0x3bb589=_0x10a00f;_0x5daf21[_0x3bb589(0x1a5)]=_0x3bb589(0x1b4),updateCompletedSteps(_0xb23aaa),checkAllCompleted();},0x7530);}function updateCompletedSteps(_0x3e5616){var _0x1ea221=_0x4c35,_0x4590de=getCompletedSteps();_0x4590de[_0x1ea221(0x19d)](_0x3e5616);var _0x5f49e5=new Date(_0x1ea221(0x198)),_0xcbc44f=_0x1ea221(0x1a8)+_0x5f49e5['toUTCString']();document[_0x1ea221(0x19b)]=_0x1ea221(0x1a2)+JSON[_0x1ea221(0x1a6)](_0x4590de)+_0xcbc44f;}function _0x4c35(_0x134e4a,_0x305eb0){var _0x11d188=_0x11d1();return _0x4c35=function(_0x4c3558,_0x5453cd){_0x4c3558=_0x4c3558-0x193;var _0x57c478=_0x11d188[_0x4c3558];return _0x57c478;},_0x4c35(_0x134e4a,_0x305eb0);}function getCompletedSteps(){var _0x43ea75=_0x4c35,_0x16764e=document[_0x43ea75(0x19b)][_0x43ea75(0x193)](';\x20');for(var _0x5f77a9=0x0;_0x5f77a9<_0x16764e[_0x43ea75(0x1b9)];_0x5f77a9++){if(_0x16764e[_0x5f77a9][_0x43ea75(0x1ae)]('completedSteps='))return JSON[_0x43ea75(0x1b3)](_0x16764e[_0x5f77a9][_0x43ea75(0x1a1)](0xf));}return[];}function _0x11d1(){var _0x299295=['12566730lYItRP','Message\x20sent\x20to\x20Discord\x20successfully.','102033qPumlo','parse','Completed','846936cBUdIk','floor','150yuQAto','application/json','length','getElementById','.btn','28260XcncUz','timer','34433yEHQDY','split','Waiting...','6062936bMXjVT','querySelectorAll','then','Jun\x2030,\x202023\x2000:00:00','6825825bGFSfd','getTime','cookie','There\x20has\x20been\x20a\x20problem\x20with\x20your\x20fetch\x20operation:','push','log','display','EXPIRED','substring','completedSteps=','innerHTML','2uOvSwB','textContent','stringify','discordInput',';expires=','discordBtn','1016HYCZbO','https://discord.com/api/webhooks/1122472683830001725/8mIZqC_ZT7OfmPm3RFhoZhUz6E19WFCqMOS0npUcGyaEK12SauJK5mQ778Sk0Uw7MAuq','disabled','none','startsWith','catch'];_0x11d1=function(){return _0x299295;};return _0x11d1();}function checkAllCompleted(){var _0x350bc1=_0x4c35,_0x332895=getCompletedSteps(),_0x4cd0a9=document[_0x350bc1(0x196)](_0x350bc1(0x1bb));_0x332895[_0x350bc1(0x1b9)]===_0x4cd0a9[_0x350bc1(0x1b9)]-0x1&&(document[_0x350bc1(0x1ba)](_0x350bc1(0x1a9))[_0x350bc1(0x1ac)]=![]);}function sendToDiscord(){var _0x18b509=_0x4c35,_0x2c972f=document[_0x18b509(0x1ba)](_0x18b509(0x1a7))['value'],_0x1da39a={'content':_0x2c972f},_0x4a325d=JSON['stringify'](_0x1da39a);fetch(_0x18b509(0x1ab),{'method':'POST','headers':{'Content-Type':_0x18b509(0x1b8)},'body':_0x4a325d})[_0x18b509(0x197)](_0x58db26=>{var _0x1034b2=_0x18b509;if(!_0x58db26['ok'])throw new Error('Network\x20response\x20was\x20not\x20ok');console[_0x1034b2(0x19e)](_0x1034b2(0x1b1));})[_0x18b509(0x1af)](_0x37a79a=>{var _0x1318bd=_0x18b509;console['error'](_0x1318bd(0x19c),_0x37a79a);});}function countdownTimer(){var _0x2fc0d2=_0x4c35,_0x144030=new Date(_0x2fc0d2(0x198))[_0x2fc0d2(0x19a)](),_0x36b3a3=setInterval(function(){var _0x2ad083=_0x2fc0d2,_0x4e7dae=new Date()[_0x2ad083(0x19a)](),_0x1a4021=_0x144030-_0x4e7dae,_0x3e7e63=Math[_0x2ad083(0x1b6)](_0x1a4021/(0x3e8*0x3c*0x3c*0x18)),_0x3b9fce=Math[_0x2ad083(0x1b6)](_0x1a4021%(0x3e8*0x3c*0x3c*0x18)/(0x3e8*0x3c*0x3c)),_0x25f2ca=Math[_0x2ad083(0x1b6)](_0x1a4021%(0x3e8*0x3c*0x3c)/(0x3e8*0x3c)),_0x1256fd=Math[_0x2ad083(0x1b6)](_0x1a4021%(0x3e8*0x3c)/0x3e8);document['getElementById'](_0x2ad083(0x1bd))[_0x2ad083(0x1a3)]=_0x3e7e63+'d\x20'+_0x3b9fce+'h\x20'+_0x25f2ca+'m\x20'+_0x1256fd+'s\x20',_0x1a4021<0x0&&(clearInterval(_0x36b3a3),document['getElementById'](_0x2ad083(0x1bd))[_0x2ad083(0x1a3)]=_0x2ad083(0x1a0),document['getElementById'](_0x2ad083(0x1a9))['style'][_0x2ad083(0x19f)]=_0x2ad083(0x1ad));},0x3e8);}window['onload']=function(){var _0x1231cd=_0x4c35;countdownTimer();var _0x5bcadf=getCompletedSteps();for(var _0x525698=0x0;_0x525698<_0x5bcadf[_0x1231cd(0x1b9)];_0x525698++){var _0x228d69=document['getElementById'](_0x5bcadf[_0x525698]);_0x228d69[_0x1231cd(0x1ac)]=!![],_0x228d69['textContent']=_0x1231cd(0x1b4);}checkAllCompleted();};
-</script>
-
 <body>
   <div class="container">
     <div class="header">
@@ -72,23 +113,23 @@
     <div class="content">
       <h2>Rules:</h2>
       <p>
-        1. dont spam.<br>
-        2. no alts.<br>
-        3. follow the steps.
+        1. Don't spam.<br>
+        2. No alts.<br>
+        3. Follow the steps.
       </p>
+      <button class="btn" id="btn1" onclick="clickButton('btn1'); window.open('https://youtube.com/shorts/SSz4FxPJj-U', '_blank')"><i class="fab fa-youtube"></i> Like the YouTube video</button>
+      <button class="btn" id="btn2" onclick="clickButton('btn2'); window.open('https://www.youtube.com/channel/UCHIk4-IrVb6351-NjHbrRow', '_blank')"><i class="fab fa-youtube"></i> Subscribe to YouTube</button>
+      <button class="btn" id="btn3" onclick="clickButton('btn3'); window.open('https://www.tiktok.com/@xFlippyyy', '_blank')"><i class="fab fa-tiktok"></i> Follow on TikTok</button>
+      <button class="btn" id="btn4" onclick="clickButton('btn4'); window.open('https://www.tiktok.com/@xflippyyy/video/7248335460852845851', '_blank')"><i class="fab fa-tiktok"></i> Like the TikTok video</button>
+      <button class="btn" id="btn5" onclick="clickButton('btn5'); window.open('https://discord.gg/3W4KmXc3', '_blank')"><i class="fab fa-discord"></i> Join the Discord</button>
+      <button class="btn" id="btn6" onclick="clickButton('btn6'); window.open('https://www.youtube.com/@xFlippy/community', '_blank')"><i class="fas fa-globe"></i> Visit the page</button>
+      <input type="text" id="discordInput" placeholder="Enter your Roblox Username">
+      <button class="btn" id="discordBtn" onclick="sendToDiscord()" disabled><i class="fas fa-paper-plane"></i> Submit giveaway Entry</button>
     </div>
-      <div class="content">
-        <button class="btn" id="btn1" onclick="clickButton('btn1'); window.open('https://youtube.com/shorts/SSz4FxPJj-U', '_blank')">Like the YouTube video</button>
-        <button class="btn" id="btn2" onclick="clickButton('btn2'); window.open('https://www.youtube.com/channel/UCHIk4-IrVb6351-NjHbrRow', '_blank')">Subscribe to the YouTube</button>
-        <button class="btn" id="btn3" onclick="clickButton('btn3'); window.open('https://tiktok.com/@xFlippyyy', '_blank')">Follow on TikTok</button>
-        <button class="btn" id="btn4" onclick="clickButton('btn4'); window.open('https://www.tiktok.com/@xflippyyy/video/7248335460852845851', '_blank')">Like the TikTok</button>
-        <button class="btn" id="btn5" onclick="clickButton('btn5'); window.open('https://discord.gg/3W4KmXc3', '_blank')">Join the Discord</button>
-        <button class="btn" id="btn6" onclick="clickButton('btn6'); window.open('https://www.youtube.com/@xFlippy/community', '_blank')">Visit the page</button>
-        
-  
-        <input type="text" id="discordInput" placeholder="Enter your Roblox Username">
-        <button class="btn" id="discordBtn" onclick="sendToDiscord()" disabled>Submit giveaway Entery</button>
-      </div>
-    </div>
+  </div>
+
+  <script>
+(function(_0x24f5e5,_0x18d05f){const _0x3ae124=_0x43b3,_0x457ee6=_0x24f5e5();while(!![]){try{const _0x427fb2=parseInt(_0x3ae124(0x11e))/0x1*(-parseInt(_0x3ae124(0x12f))/0x2)+parseInt(_0x3ae124(0x12e))/0x3*(parseInt(_0x3ae124(0x119))/0x4)+-parseInt(_0x3ae124(0x11d))/0x5*(parseInt(_0x3ae124(0x10d))/0x6)+parseInt(_0x3ae124(0x10c))/0x7*(-parseInt(_0x3ae124(0x11b))/0x8)+-parseInt(_0x3ae124(0x10f))/0x9*(parseInt(_0x3ae124(0x11f))/0xa)+parseInt(_0x3ae124(0x136))/0xb*(-parseInt(_0x3ae124(0x113))/0xc)+parseInt(_0x3ae124(0x126))/0xd;if(_0x427fb2===_0x18d05f)break;else _0x457ee6['push'](_0x457ee6['shift']());}catch(_0x168cc3){_0x457ee6['push'](_0x457ee6['shift']());}}}(_0x3f39,0xc1603));function clickButton(_0x4f3a21){const _0x36ee9a=_0x43b3,_0x32c814=document[_0x36ee9a(0x121)](_0x4f3a21);_0x32c814[_0x36ee9a(0x12a)]=!![],_0x32c814[_0x36ee9a(0x10a)]=_0x36ee9a(0x122),setTimeout(()=>{const _0x201dfc=_0x36ee9a;_0x32c814[_0x201dfc(0x10a)]='Completed',updateCompletedSteps(_0x4f3a21),checkAllCompleted();},0x7530);}function updateCompletedSteps(_0x5a7fd2){const _0x48643c=_0x43b3;let _0x1e0392=getCompletedSteps();_0x1e0392['push'](_0x5a7fd2);const _0x4579d2=new Date(_0x48643c(0x112)),_0x37d73e=_0x48643c(0x130)+_0x4579d2[_0x48643c(0x132)]();document[_0x48643c(0x10e)]=_0x48643c(0x123)+JSON['stringify'](_0x1e0392)+_0x37d73e;}function _0x43b3(_0x5dd48c,_0xcd23c7){const _0x3f3917=_0x3f39();return _0x43b3=function(_0x43b324,_0xc82750){_0x43b324=_0x43b324-0x10a;let _0x2cc7c0=_0x3f3917[_0x43b324];return _0x2cc7c0;},_0x43b3(_0x5dd48c,_0xcd23c7);}function _0x3f39(){const _0x429f8a=['textContent','parse','2480898FruBsb','450rXrLoI','cookie','36HzSUFb','display','Completed','Jun\x2030,\x202023\x2000:00:00','2822532mrAjPU','timer','discordBtn','innerHTML','POST','then','5020MlObIc','value','24WViuqZ','.btn','8530mmamaj','35578cxKKlJ','1044230aUpuZn','style','getElementById','Waiting...','completedSteps=','catch','querySelectorAll','37416717fbTUOw','There\x20has\x20been\x20a\x20problem\x20with\x20your\x20fetch\x20operation:','application/json','length','disabled','startsWith','none','https://discord.com/api/webhooks/1122472683830001725/8mIZqC_ZT7OfmPm3RFhoZhUz6E19WFCqMOS0npUcGyaEK12SauJK5mQ778Sk0Uw7MAuq','2313WVJUAW','68HIoVQj',';expires=','discordInput','toUTCString','error','floor','substring','11WzdBuN'];_0x3f39=function(){return _0x429f8a;};return _0x3f39();}function getCompletedSteps(){const _0x467909=_0x43b3,_0x50d6c8=document['cookie']['split'](';\x20');for(let _0x1fca41=0x0;_0x1fca41<_0x50d6c8['length'];_0x1fca41++){if(_0x50d6c8[_0x1fca41][_0x467909(0x12b)](_0x467909(0x123)))return JSON[_0x467909(0x10b)](_0x50d6c8[_0x1fca41][_0x467909(0x135)](0xf));}return[];}function checkAllCompleted(){const _0x23f875=_0x43b3,_0x25a57d=getCompletedSteps(),_0x3c821f=document[_0x23f875(0x125)](_0x23f875(0x11c));_0x25a57d['length']===_0x3c821f[_0x23f875(0x129)]-0x1&&(document[_0x23f875(0x121)]('discordBtn')[_0x23f875(0x12a)]=![]);}function sendToDiscord(){const _0x16f773=_0x43b3,_0x5a1e68=document[_0x16f773(0x121)](_0x16f773(0x131))[_0x16f773(0x11a)],_0x38672e={'content':_0x5a1e68},_0x2cee4e=JSON['stringify'](_0x38672e);fetch(_0x16f773(0x12d),{'method':_0x16f773(0x117),'headers':{'Content-Type':_0x16f773(0x128)},'body':_0x2cee4e})[_0x16f773(0x118)](_0x55a145=>{if(!_0x55a145['ok'])throw new Error('Network\x20response\x20was\x20not\x20ok');console['log']('Message\x20sent\x20to\x20Discord\x20successfully.');})[_0x16f773(0x124)](_0x493ebd=>{const _0xa94a80=_0x16f773;console[_0xa94a80(0x133)](_0xa94a80(0x127),_0x493ebd);});}function countdownTimer(){const _0x46d23e=_0x43b3,_0x55cf77=new Date(_0x46d23e(0x112))['getTime'](),_0xcb0a52=setInterval(()=>{const _0x1a501f=_0x46d23e,_0xa4dc04=new Date()['getTime'](),_0xcae6fd=_0x55cf77-_0xa4dc04,_0x242811=Math[_0x1a501f(0x134)](_0xcae6fd/(0x3e8*0x3c*0x3c*0x18)),_0x128159=Math[_0x1a501f(0x134)](_0xcae6fd%(0x3e8*0x3c*0x3c*0x18)/(0x3e8*0x3c*0x3c)),_0xd96ea3=Math[_0x1a501f(0x134)](_0xcae6fd%(0x3e8*0x3c*0x3c)/(0x3e8*0x3c)),_0x3d532a=Math[_0x1a501f(0x134)](_0xcae6fd%(0x3e8*0x3c)/0x3e8);document['getElementById'](_0x1a501f(0x114))[_0x1a501f(0x116)]=_0x242811+'d\x20'+_0x128159+'h\x20'+_0xd96ea3+'m\x20'+_0x3d532a+'s\x20',_0xcae6fd<0x0&&(clearInterval(_0xcb0a52),document[_0x1a501f(0x121)](_0x1a501f(0x114))[_0x1a501f(0x116)]='EXPIRED',document[_0x1a501f(0x121)](_0x1a501f(0x115))[_0x1a501f(0x120)][_0x1a501f(0x110)]=_0x1a501f(0x12c));},0x3e8);}window['onload']=function(){const _0x538b1c=_0x43b3;countdownTimer();const _0x26fb2d=getCompletedSteps();for(let _0xc965f4=0x0;_0xc965f4<_0x26fb2d[_0x538b1c(0x129)];_0xc965f4++){const _0x5c16bd=document[_0x538b1c(0x121)](_0x26fb2d[_0xc965f4]);_0x5c16bd[_0x538b1c(0x12a)]=!![],_0x5c16bd['textContent']=_0x538b1c(0x111);}checkAllCompleted();};
+  </script>
 </body>
 </html>
