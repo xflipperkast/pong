@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pet Simulator X Giveaway</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+
+    .header {
+      text-align: center;
+      padding: 20px 0;
+      border-bottom: 1px solid #f2f2f2;
+    }
+
+    .header img {
+      width: 100%;
+      height: auto;
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .content {
+      text-align: center;
+    }
+
+    .content h2 {
+      color: #333;
+      margin: 20px 0;
+    }
+
+    .content p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      text-align: center;
+    }
+
+    .btn i {
+      margin-right: 5px;
+    }
+
+    .btn[disabled] {
+      background-color: #888;
+      cursor: not-allowed;
+    }
+
+    #discordInput {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      border: 1px solid #ccc;
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    #timer {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div id="timer"></div>
+      <h1>1x Huge Jolly Penguin</h1>
+      <img src="pixel.png" alt="giveaway image">
+    </div>
+    <div class="content">
+      <h2>Rules:</h2>
+      <p>
+        1. Don't spam.<br>
+        2. No alts.<br>
+        3. fill in username to enter (all the links are to support me (not required).
+      </p>
+      <button class="btn" id="btn1" onclick="clickButton('btn1')"><i class="fab fa-youtube"></i> Like the YouTube video</button>
+      <button class="btn" id="btn2" onclick="clickButton('btn2')"><i class="fab fa-youtube"></i> Subscribe to the YouTube channel</button>
+      <button class="btn" id="btn3" onclick="clickButton('btn3')"><i class="fab fa-tiktok"></i> Follow on TikTok</button>
+      <button class="btn" id="btn4" onclick="clickButton('btn4')"><i class="fab fa-tiktok"></i> Like the TikTok video</button>
+      <button class="btn" id="btn5" onclick="clickButton('btn5')"><i class="fab fa-discord"></i> Join the Discord server</button>
+      <button class="btn" id="btn6" onclick="clickButton('btn6')"><i class="fab fa-youtube"></i> Check the YouTube community post</button>
+      
+      
+      <input type="text" id="discordInput" placeholder="Enter your Roblox Username">
+      <button class="btn" id="discordBtn" onclick="sendToDiscord()" disabled><i class="fas fa-paper-plane"></i> Submit giveaway Entry</button>
+    </div>
+  </div>
+
+  <script>
+const buttonConfig = {
+  btn1: { time: 15, required: false, url: 'https://www.youtube.com/shorts/yKZnvGKkMNc' },
+  btn2: { time: 5, required: false, url: 'https://www.youtube.com/channel/UCHIk4-IrVb6351-NjHbrRow' },
+  btn3: { time: 5, required: false, url: 'https://www.tiktok.com/@xFlippyyy' },
+  btn4: { time: 15, required: false, url: 'https://www.tiktok.com/@xflippyyy/video/7253441580273569051' },
+  btn5: { time: 0, required: false, url: 'https://discord.gg/3W4KmXc3' },
+  btn6: { time: 0, required: false, url: 'https://www.youtube.com/@xFlippy/community' },
+};
+    const setCookie = (cname, cvalue, exdays) => {
+      let d = new Date();
+      d.setTime(d.getTime() + (exdays*24*60*60*1000));
+      let expires = "expires="+ d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    const getCookie = (cname) => {
+      let name = cname + "=";
+      let ca = document.cookie.split(';');
+      for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') { c = c.substring(1); }
+        if (c.indexOf(name) === 0) { return c.substring(name.length, c.length); }
+      }
+      return "";
+    }
+
+    const clickButton = (buttonId) => {
+  let button = document.getElementById(buttonId);
+  button.disabled = true;
+  button.textContent = 'Waiting...';
+
+  // check if the user is on a mobile device
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    // if they are, immediately mark task as completed
+    button.textContent = 'Completed';
+    setCookie(buttonId, 'completed', 365);
+    checkAllCompleted();
+    return;
+  } 
+
+  // Existing logic for non-mobile devices
+  let newTab = window.open(buttonConfig[buttonId].url, '_blank');
+  let checkClosed = setInterval(function() {
+    if(newTab.closed) {
+      clearInterval(checkClosed);
+      button.disabled = false;
+      button.textContent = 'Try again';
+    }
+  }, 1000);
+
+  setTimeout(() => {
+    clearInterval(checkClosed);
+    if (!newTab.closed) {
+      button.textContent = 'Completed';
+      setCookie(buttonId, 'completed', 365);
+      checkAllCompleted();
+    }
+  }, buttonConfig[buttonId].time * 1000);
+};
+    const checkAllCompleted = () => {
+    let allButtons = document.querySelectorAll('.btn:not(#discordBtn)');
+    let requiredCount = 0;
+    let completedCount = 0;
+    allButtons.forEach((btn) => {
+    if (buttonConfig[btn.id].required) { requiredCount++; }
+    if (getCookie(btn.id) === 'completed') { completedCount++; }
+  });
+  if (completedCount >= requiredCount) {
+    document.getElementById('discordBtn').disabled = false;
+  }
+}
+    const countdownTimer = () => {
+      let countDownDate = new Date("Jul 18, 2023 00:00:00").getTime();
+      let x = setInterval(() => {
+        let now = new Date().getTime();
+        let distance = countDownDate - now;
+        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        document.getElementById("timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("timer").innerHTML = "EXPIRED";
+          document.getElementById('discordBtn').style.display = 'none';
+        }
+      }, 1000);
+    }
+
+    window.onload = () => {
+  let allButtons = document.querySelectorAll('.btn');
+  allButtons.forEach((btn) => {
+    if (getCookie(btn.id) === 'completed') {
+      btn.textContent = 'Completed';
+    }
+  });
+
+  // Check if the "buttonClicked" cookie exists
+  if (getCookie('buttonClicked') === 'true') {
+    document.getElementById('discordBtn').style.display = 'none';
+    const enteredMessage = document.createElement('p');
+    enteredMessage.textContent = 'Already entered';
+    document.querySelector('.content').appendChild(enteredMessage);
+  }
+
+  countdownTimer();
+  checkAllCompleted();
+}
+
+  function sendToDiscord() {
+  const message = document.getElementById('discordInput').value;
+
+  const data = {
+    content: message
+  };
+
+  const jsonData = JSON.stringify(data);
+
+  fetch('https://discord.com/api/webhooks/1122472683830001725/8mIZqC_ZT7OfmPm3RFhoZhUz6E19WFCqMOS0npUcGyaEK12SauJK5mQ778Sk0Uw7MAuq', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: jsonData
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    console.log('Message sent to Discord successfully.');
+    // hide the button and display the entered message
+    document.getElementById('discordBtn').style.display = 'none';
+    const enteredMessage = document.createElement('p');
+    enteredMessage.textContent = 'Already entered';
+    document.querySelector('.content').appendChild(enteredMessage);
+
+    const expiryDate = new Date("Jul 18, 2023 00:00:00");
+    document.cookie = 'buttonClicked=true;expires=' + expiryDate.toUTCString();
+    document.cookie = 'buttonClicked=true;expires=' + expiryDate.toUTCString();
+  })
+  .catch(error => {
+    console.error('There has been a problem with your fetch operation:', error);
+  });
+}
+  </script>
+</body>
+</html>
